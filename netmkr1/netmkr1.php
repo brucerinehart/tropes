@@ -199,7 +199,7 @@ $latest_posts = get_posts( $argss );
 
 foreach ( $latest_posts as $post ) {
 
-  array_push($nodes, array ( 'name' => $post->post_title, 'wp_pID' => $post->ID, 'postAuthor' => $post->post_author, 'group' => 'posts', 'nodeType' => 'post' ) );
+  array_push($nodes, array ( 'name' => $post->post_title, 'wp_pID' => $post->ID, 'datePosted' => $post->post_date, 'postAuthor' => $post->post_author, 'group' => 'posts', 'nodeType' => 'post' ) );
 
 
     
@@ -239,7 +239,7 @@ foreach ( $latest_posts as $post ) {
       // commenter node
 
 //        array_push($nodes, array ( 'name' => $comment->comment_author, 'wp_pID' => $comment->comment_ID, 'postAuthor' => $comment_author, 'group' => 'commenter', 'nodeType' => 'commenter' ) );
-        array_push($nodes, array ( 'name' => $comment->comment_author, 'postAuthor' => $comment_author, 'group' => 'commenter', 'nodeType' => 'commenter' ) );
+        array_push($nodes, array ( 'name' => $comment->comment_author, 'postAuthor' => $comment->comment_author, 'datePosted' => $comment->comment_date, 'group' => 'commenter', 'nodeType' => 'commenter' ) );
 
       // commenter link
 //        array_push($links, array ( 'target' => $post->post_title, 'source' => $user_info->user_nicename ) );

@@ -188,6 +188,9 @@ dadata.links.forEach(function(e) {
 	    .attr("text-anchor", "left")
 	    .text(function (d) {
 	    return d.name
+	})
+	    .text(function (d){
+		return d.datePosted
 	});
 
 	force.on("tick", function () {
